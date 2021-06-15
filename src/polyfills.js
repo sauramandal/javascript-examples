@@ -28,3 +28,24 @@ Array.prototype.customFilter = function (fn) {
 
 ans = numbers.customFilter((item, index) => item % 2);
 console.log("Custom filter elements ->", ans);
+
+let name = {
+  firstName: "John",
+  lastName: "Doe"
+};
+const printDetails = function (hometown, state) {
+  console.log(
+    this.firstName + ", " + this.lastName + ", " + hometown + ", " + state
+  );
+};
+Function.prototype.myBind = function (...args) {
+  let self = this,
+    context = args[0],
+    params = args.slice(1);
+  return function (...args2) {
+    self.apply(context, [...params, ...args2]);
+  };
+};
+
+let userDetails = printDetails.myBind(name, "Kolkata", "WB");
+userDetails();
