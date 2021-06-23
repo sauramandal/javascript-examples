@@ -1,5 +1,20 @@
 import { Cat, Dog, Mouse, video, Identity, food } from "./this-examples";
+import {removeDuplicatesBy} from './array-operations'
 
+const key = "name";
+const flightData = [
+  { id: 1, name: "test1", src: "A", dest: "B" },
+  { id: 2, name: "test2", src: "A", dest: "B" },
+  { id: 3, name: "test1", src: "A", dest: "B" },
+  { id: 4, name: "test1", src: "B", dest: "C" },
+  { id: 5, name: "test3", src: "A", dest: "C" },
+  { id: 6, name: "test4", src: "A", dest: "B" },
+  { id: 7, name: "test1", src: "C", dest: "B" }
+];
+
+const results = removeDuplicatesBy(flightData, key);
+
+console.log("results", results);
 Cat();
 
 let cat = new Dog(); // Dog {name: "felix"}
