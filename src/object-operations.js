@@ -23,3 +23,23 @@ export function toTitleCase(str) {
     return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
   });
 }
+
+export const sortBy = (list, field, asc = true) => {
+  return list.sort((itemA, itemB) => {
+    const x =
+      typeof itemA[field] === "string"
+        ? itemA[field].toLowerCase()
+        : itemA[field];
+    const y =
+      typeof itemB[field] === "string"
+        ? itemB[field].toLowerCase()
+        : itemB[field];
+    if (x < y) {
+      return asc ? -1 : 1;
+    }
+    if (x > y) {
+      return asc ? 1 : -1;
+    }
+    return 0;
+  });
+};
