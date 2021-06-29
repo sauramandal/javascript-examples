@@ -46,3 +46,22 @@ me.printName();
 
 let soup = new food("soup");
 soup.cook(2); // soup cooked for 2 seconds.
+
+const employee = {
+  name: "Chris Haris",
+  age: 26
+};
+
+Object.freeze(employee);
+// employee.name = "Saura";
+// employee.salary = 2000000;
+console.log("Employee", employee);
+
+const user = {
+  name: "John Doe",
+  isOnline: false
+};
+Object.seal(user);
+user.name = "A Williams";
+// user.age = 30;  Object is not extensible
+console.log("User", user);
