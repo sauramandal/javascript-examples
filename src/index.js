@@ -65,3 +65,16 @@ Object.seal(user);
 user.name = "A Williams";
 // user.age = 30;  Object is not extensible
 console.log("User", user);
+
+// ES6 MAPS
+let animals = new Map();
+animals.set("pe", "penguin");
+animals.set("ti", "tiger");
+animals.set("do", "dog");
+
+console.log(animals.get("ti"));
+animals.delete("pe");
+console.log(animals.has("pe"));
+console.log(animals.has("ti"));
+animals.clear();
+console.log("Anumals", animals);
